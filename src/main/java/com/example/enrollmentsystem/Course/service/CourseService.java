@@ -5,6 +5,8 @@ import com.example.enrollmentsystem.Course.repo.CourseRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CourseService {
 
@@ -21,5 +23,9 @@ public class CourseService {
 
     public void deleteCourse(Long courseId){
         courseRepository.deleteById(courseId);
+    }
+
+    public List<Course> findAllCourses(){
+        return courseRepository.findAll();
     }
 }
